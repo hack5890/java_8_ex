@@ -36,7 +36,7 @@ public class SchoolController {
 		}else if(select==2) {
 			//성적 입력
 			System.out.println("2 . 성적 입력");
-			
+			service.addPoint(stu);
 		}else if(select==3) {
 			//성적 조회
 			System.out.println("3 . 성적 조회");
@@ -55,9 +55,6 @@ public class SchoolController {
 		}
 		
 	}
-	
-	
-	
-	
+
 	
 }
