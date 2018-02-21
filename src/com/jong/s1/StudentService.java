@@ -62,7 +62,6 @@ public class StudentService {
 			if(num==student[i].num) {
 				index=i;
 			}
-
 		}
 		return student[index];
 	}
