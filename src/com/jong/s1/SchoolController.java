@@ -40,11 +40,19 @@ public class SchoolController {
 			
 		}else if(select==3) {
 			//성적 조회
-			Student st = new Student();
 			System.out.println("3 . 성적 조회");
+			if(stu!=null) {
+			Student st = new Student();
 			st=service.search(stu);
-			sview.viewStudent(st);
-			
+			if(st!= null) {			
+			sview.view(st);
+			}else {
+				sview.view("해당 번호의 학생이 없습니다.");
+			}
+			}else {
+				sview.view("학생정보를 먼저 입력하세요");
+			}
+			break;
 		}else if(select==4) {
 			//전체 조회
 			System.out.println("4 . 전체 조회");

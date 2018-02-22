@@ -10,9 +10,14 @@ public class StudentService {
 	//학생수 만큼
 	//이름입력
 	//번호입력
-
+	Scanner sc;
+	public StudentService() {
+		sc = new Scanner(System.in);
+	}
+	
+	
+	
 	public Student[] addStudent() {
-		Scanner sc= new Scanner(System.in);	
 		System.out.println("학생의 인원수를 입력하세요");
 		int num= sc.nextInt();		
 		Student [] student = new Student[num];		
@@ -32,8 +37,6 @@ public class StudentService {
 	//각학생의 점수 입력
 	public void addPoint(Student[] student) {	// 학생의 정보가 담겨있는 배열의 주소값을 매개 변수로
 
-		Scanner sc= new Scanner(System.in);	
-
 		for(int i =0;i<student.length;i++) {
 			System.out.println(student[i].name+"의 국어점수 입력");
 			student[i].kor=sc.nextInt();
@@ -52,7 +55,7 @@ public class StudentService {
 	//search 메서드명
 	//번호를 입력받아서 학생 한명을 찾아서
 	//해당학생 출력은 StudentView class의 viewStudent메서드에서 출력
-	public Student search(Student[] student) {
+	/*public Student search(Student[] student) {
 		Scanner sc= new Scanner(System.in);	
 	
 		int index = 0;
@@ -64,8 +67,20 @@ public class StudentService {
 			}
 		}
 		return student[index];
-	}
+	}*/
 
+	public Student search(Student[] students) {
+		System.out.println("학생 번호를 입력하세요");
+		int num= sc.nextInt();
+		Student student =null;
+		for(int i = 0; i<students.length;i++) {
+			if(num==students[i].num) {
+				student = students[i];
+				break;
+			}		
+		}
+		return student;
+	}
 
 
 }
